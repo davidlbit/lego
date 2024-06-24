@@ -1,0 +1,80 @@
+[tool.poetry]
+name = "lego"
+version = "0.1.0"
+description = "This project is part of a case study, conducted during the interview process for the Senior Software Engineering Position at the Lego Group. The repository is meant to illustrate my software skills."
+authors = ["David Anthony Parham <davidanthonyparham@yahoo.de>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pre-commit = "^3.7.1"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.3.0"
+pre-commit = "^3.3.3"
+mypy = "^1.4.0"
+codespell = "^2.2.5"
+auto-walrus = "^0.2.2"
+unimport = "^0.16.0"
+libcst = "^0.3.7"
+ipykernel = "^6.23.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 120
+target-version = ['py310']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.venv
+)/
+'''
+
+[[tool.mypy.overrides]]
+module = "firstmodule.*"
+ignore_missing_imports = true
+
+[tool.ruff]
+line-length = 120
+select = [
+    "E",   # pydocstyle
+    "F",   # flake8
+    "B",   # flake8-bugbear
+    "W",   # pydocstyle
+    "UP",  # pyupgrade
+    "D",   # pydocstyle
+    "PL",  # pylint
+    "NPY", # Numpy rules
+    "RUF", # RUF rules
+    "I",   # Isort
+]
+ignore = [
+    "D202",
+    "E402",
+    "E203",
+    "PLR2004",
+    "D100",
+    "B018",
+    "D103",
+    "D104",
+    "F404",
+]
+
+[tool.ruff.pydocstyle]
+convention = "google"  # Accepts: "google", "numpy", or "pep257".
+
+[tool.unimport]
+sources = ["path1", "path2"]
+exclude = '__init__.py|tests/'
+include = 'test|test2|tests.py'
+gitignore = true
+remove = false
+check = true
+diff = true
+include_star_import = true
+ignore_init = true
