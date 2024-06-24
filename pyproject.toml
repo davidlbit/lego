@@ -8,6 +8,14 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.10"
 pre-commit = "^3.7.1"
+psycopg2-binary = "^2.9.9"
+sqlalchemy = "^2.0.31"
+python-dotenv = "^1.0.1"
+numpy = "^2.0.0"
+tqdm = "^4.66.4"
+faker = "^25.9.1"
+pygraphviz = "^1.13"
+eralchemy2 = "^1.4.1"
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.3.0"
@@ -41,6 +49,8 @@ ignore_missing_imports = true
 
 [tool.ruff]
 line-length = 120
+
+[tool.ruff.lint]
 select = [
     "E",   # pydocstyle
     "F",   # flake8
@@ -65,8 +75,10 @@ ignore = [
     "F404",
 ]
 
-[tool.ruff.pydocstyle]
-convention = "google"  # Accepts: "google", "numpy", or "pep257".
+[tool.ruff.lint.pydocstyle]
+convention = "google"  # Accepts: "google", "numpy", or "pep257"
+
+
 
 [tool.unimport]
 sources = ["path1", "path2"]
