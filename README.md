@@ -23,12 +23,10 @@ The application is intended for use in a production line. The machinery is confi
 ## Solution Layout
 
 1. **Connect to the Database**:
-   - Scan a unique ID (order identifier) to get an overview of all LEGO sets.
+   - Scan a unique ID (order identifier) to get the order history, with the complete product summary.
    - Query the following information:
-     - Total number of LEGO sets
      - Total number of LEGO bricks
-     - Number of different LEGO sets
-     - Number of different LEGO bricks
+     - The CAT models, of the specific lego bricks
 
 2. **Create Reference Images**:
    - Forward the product ID to the pipeline responsible for generating synthetic images of the LEGO bricks.
@@ -37,8 +35,8 @@ The application is intended for use in a production line. The machinery is confi
    - Open a video stream and wait for the LEGO bricks to pass by.
 
 4. **Object Detection and Comparison**:
-   - Detect objects and compare them using techniques such as a Siamese Network, CNN, or Few-Shot Learning against all reference images (support set).
-   - Label the detected objects as either "Redundant Brick" or a unique code if the LEGO brick is not part of the recognized set.
+   - Use sota object detectors (YOLO10 / RT-DETR) and compare the detected objects via a CNN (resnet18) against all reference images (support set).
+   - Label the detected objects as either "Redundant Brick" if the LEGO brick is not part of the recognized set, or with their product ID.
    - Create a dictionary at initialization that tracks all LEGO brick IDs and counts. Decrement the count each time a LEGO brick is recognized. This dictionary will provide information on how many LEGO bricks are missing.
 
 
@@ -46,60 +44,55 @@ The application is intended for use in a production line. The machinery is confi
 
 ![LEGO Flowchart]()
 
+### Database Design
+
+![Database Design](/assets/db_diagram.png)
+
 
 ## Project Organization
 
 ```
-├── LICENSE            <- Open-source license if one is chosen
-├── Makefile           <- Makefile with convenience commands like `make data` or `make train`
-├── README.md          <- The top-level README for developers using this project.
-├── data
-│   ├── external       <- Data from third party sources.
-│   ├── interim        <- Intermediate data that has been transformed.
-│   ├── processed      <- The final, canonical data sets for modeling.
-│   └── raw            <- The original, immutable data dump.
-│
-├── docs               <- A default mkdocs project; see mkdocs.org for details
-│
-├── models             <- Trained and serialized models, model predictions, or model summaries
-│
-├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-│                         the creator's initials, and a short `-` delimited description, e.g.
-│                         `1.0-jqp-initial-data-exploration`.
-│
-├── pyproject.toml     <- Project configuration file with package metadata for lego
-│                         and configuration for tools like black
-│
-├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-│
-├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-│   └── figures        <- Generated graphics and figures to be used in reporting
-│
-├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-│                         generated with `pip freeze > requirements.txt`
-│
-├── setup.cfg          <- Configuration file for flake8
-│
-└── lego                <- Source code for use in this project.
-    │
-    ├── __init__.py    <- Makes lego a Python module
-    │
-    ├── data           <- Scripts to download or generate data
-    │   └── make_dataset.py
-    │
-    ├── features       <- Scripts to turn raw data into features for modeling
-    │   └── build_features.py
-    │
-    ├── models         <- Scripts to train models and then use trained models to make
-    │   │                 predictions
-    │   ├── predict_model.py
-    │   └── train_model.py
-    │
-    └── visualization  <- Scripts to create exploratory and results oriented visualizations
-        └── visualize.py
+├── LICENSE                    <- License file if one is chosen
+├── README.md                  <- Top-level README for developers
+├── poetry.lock                <- Poetry lock file (dependency resolution)
+├── pyproject.toml             <- Poetry project configuration file
+├── requirements.txt           <- Traditional requirements file for pip
+├── assets                     <- Directory for non-code assets
+│   ├── db_diagram.pdf         <- Database Design PDF asset
+│   └── db_diagram.png         <- Database Design PNG asset
+├── config                     <- Configuration files
+│   └── config.yaml            <- Image-recognition configuration file
+├── src                        <- Source code root
+│   ├── __init__.py            <- Initialization module for src package
+│   ├── data                   <- Scripts for data handling
+│   │   ├── __init__.py
+│   │   └── synthetic_data.py  <- Script for synthetic dummy data generation
+│   ├── database               <- Scripts related to database operations
+│   │   ├── __init__.py
+│   │   ├── config.py          <- Database configuration
+│   │   ├── create_dummy_db.py <- Main database script
+│   │   └── schema.py          <- Database schema
+│   ├── mockup                 <- Scripts for generating mock data
+│   │   ├── __init__.py
+│   │   └── fake_db_data_generation.py <- Database related operations using dummy data
+│   ├── models                 <- Scripts for model training and inference
+│   │   ├── __init__.py
+│   │   ├── checkpoints        <- Directory for model checkpoints
+│   │   ├── custom_dataset.py  <- Example custom dataset script
+│   │   ├── image_recognition_train.py <- Image recognition script
+│   │   ├── inference.py       <- NotImplemented
+│   │   └── video_stream_run.py <- NotImplemented
+│   └── utils                  <- Utility scripts and modules
+└── unit_tests                 <- Unit tests directory
+    └── database.py            <- NotImplemented
+
 ```
 
 --------
+
+> Note: The code is not fully functional, and certain parts aren't even implemented,
+> or connected to parts in the source code, they're supposed to be integrated into.
+> The Project organization layout (shown above) displays those parts.
 
 ## Getting Started
 
@@ -107,9 +100,8 @@ To run this project, follow these steps:
 
 1. Clone the repository.
 2. Set up the database connection.
-3. Configure the synthetic image generation pipeline.
-4. Initialize the video stream processing.
-5. Run the object detection and comparison algorithm.
+3. CD into the src folder
+4. Play around, by executing the provided scripts.
 
 
 ## License

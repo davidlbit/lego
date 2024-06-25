@@ -27,6 +27,7 @@ notebooks/
 references/
 reports/
 scripts/
+src/wandb
 
 Makefile
 tox.ini
