@@ -6,6 +6,8 @@
 
 This project is part of a case study conducted during the interview process for the Senior Software Engineering Position at the LEGO Group. The repository demonstrates my software engineering skills.
 
+![Lego Logo](/assets/lego.jpeg)
+
 ## Sample Exercise
 
 Create a mockup source code solution for an application that focuses on image recognition of LEGO bricks, limited to a maximum of two attributes.
