@@ -56,39 +56,39 @@ The application is intended for use on a production line where machinery is conf
 ## Project Organization
 
 ```
-├── LICENSE                    <- License file if one is chosen
-├── README.md                  <- Top-level README for developers
-├── poetry.lock                <- Poetry lock file (dependency resolution)
-├── pyproject.toml             <- Poetry project configuration file
-├── requirements.txt           <- Traditional requirements file for pip
-├── assets                     <- Directory for non-code assets
-│   ├── db_diagram.pdf         <- Database Design PDF asset
-│   └── db_diagram.png         <- Database Design PNG asset
-├── config                     <- Configuration files
-│   └── config.yaml            <- Image-recognition configuration file
-├── src                        <- Source code root
-│   ├── __init__.py            <- Initialization module for src package
-│   ├── data                   <- Scripts for data handling
+├── LICENSE                            <- License file if one is chosen
+├── README.md                          <- Top-level README for developers
+├── poetry.lock                        <- Poetry lock file (dependency resolution)
+├── pyproject.toml                     <- Poetry project configuration file
+├── requirements.txt                   <- Traditional requirements file for pip
+├── assets                             <- Directory for non-code assets
+│   ├── db_diagram.pdf                 <- Database Design PDF asset
+│   └── db_diagram.png                 <- Database Design PNG asset
+├── config                             <- Configuration files
+│   └── config.yaml                    <- Image-recognition configuration file
+├── src                                <- Source code root
+│   ├── __init__.py                    <- Initialization module for src package
+│   ├── data                           <- Scripts for data handling
 │   │   ├── __init__.py
-│   │   └── synthetic_data.py  <- Script for synthetic dummy data generation
-│   ├── database               <- Scripts related to database operations
+│   │   └── synthetic_data.py          <- Script for synthetic dummy data generation
+│   ├── database                       <- Scripts related to database operations
 │   │   ├── __init__.py
-│   │   ├── config.py          <- Database configuration
-│   │   ├── create_dummy_db.py <- Main database script
-│   │   └── schema.py          <- Database schema
-│   ├── mockup                 <- Scripts for generating mock data
+│   │   ├── config.py                  <- Database configuration
+│   │   ├── create_dummy_db.py         <- Main database script
+│   │   └── schema.py                  <- Database schema
+│   ├── mockup                         <- Scripts for generating mock data
 │   │   ├── __init__.py
 │   │   └── fake_db_data_generation.py <- Database related operations using dummy data
-│   ├── models                 <- Scripts for model training and inference
+│   ├── models                         <- Scripts for model training and inference
 │   │   ├── __init__.py
-│   │   ├── checkpoints        <- Directory for model checkpoints
-│   │   ├── custom_dataset.py  <- Example custom dataset script
+│   │   ├── checkpoints                <- Directory for model checkpoints
+│   │   ├── custom_dataset.py          <- Example custom dataset script
 │   │   ├── image_recognition_train.py <- Image recognition script
-│   │   ├── inference.py       <- NotImplemented
-│   │   └── video_stream_run.py <- NotImplemented
-│   └── utils                  <- Utility scripts and modules
-└── unit_tests                 <- Unit tests directory
-    └── database.py            <- NotImplemented
+│   │   ├── inference.py               <- NotImplemented
+│   │   └── video_stream_run.py        <- NotImplemented
+│   └── utils                          <- Utility scripts and modules
+└── unit_tests                         <- Unit tests directory
+    └── database.py                    <- NotImplemented
 
 ```
 
