@@ -2,7 +2,9 @@
 ######################################################################
 # Authors:  David Anthony Parham
 
-# Module Description: This script is not functional and is purely for demo purposes
+# Module Description: This script is meant to demonstrate
+# the functionality of creating synthetic images, based on provided
+# product ids, and their CAT models, sourced from the database.
 ######################################################################
 
 from typing import Any, Dict, List, Tuple

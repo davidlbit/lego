@@ -1,0 +1,8 @@
+---
+EPOCHS: 10
+BATCH_SIZE: 64
+LEARNING_RATE: 0.001
+N_WORKERS: 2
+BEST_VAL: 1e9
+BEST_MODEL_PATH: /checkpoints/best_model.pth
+CHECKPOINT_PATH: /checkpoints/

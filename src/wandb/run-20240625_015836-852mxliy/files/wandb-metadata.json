@@ -1,0 +1,148 @@
+{
+    "os": "Linux-6.9.3-76060903-generic-x86_64-with-glibc2.35",
+    "python": "3.10.12",
+    "heartbeatAt": "2024-06-24T23:58:36.870985",
+    "startedAt": "2024-06-24T23:58:36.278573",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/home/dxvidparham/Coding/Projects_Obsidian/lego/src/models/test.py",
+    "codePathLocal": "models/test.py",
+    "codePath": "src/models/test.py",
+    "git": {
+        "remote": "https://github.com/davidlbit/lego.git",
+        "commit": "a0706649cb3539da9457ad15b6c383484c9c09fd"
+    },
+    "email": "davidanthonyparham@yahoo.de",
+    "root": "/home/dxvidparham/Coding/Projects_Obsidian/lego",
+    "host": "pop-os",
+    "username": "dxvidparham",
+    "executable": "/home/dxvidparham/.cache/pypoetry/virtualenvs/lego-90qDCcGT-py3.10/bin/python3",
+    "cpu_count": 14,
+    "cpu_count_logical": 20,
+    "cpu_freq": {
+        "current": 1302.7901,
+        "min": 400.0,
+        "max": 4160.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 400.34,
+            "min": 400.0,
+            "max": 4600.0
+        },
+        {
+            "current": 492.457,
+            "min": 400.0,
+            "max": 4600.0
+        },
+        {
+            "current": 400.452,
+            "min": 400.0,
+            "max": 4600.0
+        },
+        {
+            "current": 400.0,
+            "min": 400.0,
+            "max": 4600.0
+        },
+        {
+            "current": 3341.872,
+            "min": 400.0,
+            "max": 4600.0
+        },
+        {
+            "current": 400.0,
+            "min": 400.0,
+            "max": 4600.0
+        },
+        {
+            "current": 400.0,
+            "min": 400.0,
+            "max": 4600.0
+        },
+        {
+            "current": 400.0,
+            "min": 400.0,
+            "max": 4600.0
+        },
+        {
+            "current": 400.0,
+            "min": 400.0,
+            "max": 4600.0
+        },
+        {
+            "current": 400.0,
+            "min": 400.0,
+            "max": 4600.0
+        },
+        {
+            "current": 399.667,
+            "min": 400.0,
+            "max": 4600.0
+        },
+        {
+            "current": 400.0,
+            "min": 400.0,
+            "max": 4600.0
+        },
+        {
+            "current": 1105.414,
+            "min": 400.0,
+            "max": 3500.0
+        },
+        {
+            "current": 1173.472,
+            "min": 400.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2159.807,
+            "min": 400.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2305.194,
+            "min": 400.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2691.496,
+            "min": 400.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2157.078,
+            "min": 400.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2181.345,
+            "min": 400.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2616.099,
+            "min": 400.0,
+            "max": 3500.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 906.9391212463379,
+            "used": 78.38323211669922
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+            "memory_total": 4294967296
+        }
+    ],
+    "memory": {
+        "total": 31.085636138916016
+    }
+}
