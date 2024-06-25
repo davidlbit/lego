@@ -19,6 +19,18 @@
 # Experimental scripts
 experimental/
 
+# Redundant folders / files
+data/
+docs/
+lego/
+notebooks/
+references/
+reports/
+scripts/
+
+Makefile
+tox.ini
+
 ### JupyterNotebooks ###
 # gitignore template for Jupyter Notebooks
 # website: http://jupyter.org/
