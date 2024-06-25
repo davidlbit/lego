@@ -62,7 +62,8 @@ The application is intended for use on a production line where machinery is conf
 ├── pyproject.toml                     <- Poetry project configuration file
 ├── requirements.txt                   <- Traditional requirements file for pip
 ├── assets                             <- Directory for non-code assets
-│   ├── db_diagram.pdf                 <- Database Design PDF asset
+│   ├── Platform_Concept.png           <- Flowchart asset
+│   ├── lego.jpg                       <- Lego logo asset
 │   └── db_diagram.png                 <- Database Design PNG asset
 ├── config                             <- Configuration files
 │   └── config.yaml                    <- Image-recognition configuration file
