@@ -32,6 +32,8 @@ src/wandb
 Makefile
 tox.ini
 
+assets/db_diagram.pdf
+
 ### JupyterNotebooks ###
 # gitignore template for Jupyter Notebooks
 # website: http://jupyter.org/

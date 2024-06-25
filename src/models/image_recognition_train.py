@@ -29,7 +29,7 @@ config = OmegaConf.load("/home/dxvidparham/Coding/Projects_Obsidian/lego/config/
 # Initialize logging with wandb and track conf settings
 WANDB_API = os.getenv("WANDB_API")
 wandb.login(key=WANDB_API)
-wandb.init(project="MLOps-Project", config=dict(config))
+wandb.init(project="lego-image-recognition", config=dict(config))
 
 # Set seeds for reproducibility using numpy's Generator
 rng = np.random.default_rng(seed=1)
