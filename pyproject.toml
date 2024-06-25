@@ -67,6 +67,7 @@ select = [
     "NPY", # Numpy rules
     "RUF", # RUF rules
     "I",   # Isort
+    "NPY201", # Numpy 2.0 rules
 ]
 ignore = [
     "D202",

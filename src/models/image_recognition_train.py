@@ -9,6 +9,7 @@
 
 import os
 import time
+from pathlib import Path
 
 import numpy as np
 import torch
@@ -24,7 +25,8 @@ from tqdm import tqdm
 from data.synthetic_data import generate_synthetic_data_for_products
 
 # Load config file
-config = OmegaConf.load("/home/dxvidparham/Coding/Projects_Obsidian/lego/config/config.yaml")
+config_path = Path("..") / "config" / "config.yaml"
+config = OmegaConf.load(config_path)
 
 # Initialize logging with wandb and track conf settings
 WANDB_API = os.getenv("WANDB_API")
