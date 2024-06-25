@@ -44,7 +44,7 @@ The application is intended for use on a production line where machinery is conf
 
 ![LEGO Flowchart](/assets/Lego_Platform_Concept_Flowchart.png)
 
-> Note: This flowchart is a draft version and is subject to change in the future. Its intention is to fully depict the architecture of a LEGO brick sorting platform.
+> Note: This flowchart is a draft version and is subject to change in the future. Its intention is to fully depict the conceptual architecture of a LEGO brick sorting platform.
 
 ### Database Design
 
