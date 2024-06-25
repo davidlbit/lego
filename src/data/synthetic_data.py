@@ -2,9 +2,9 @@
 ######################################################################
 # Authors:  David Anthony Parham
 
-# Module Description: This script is meant to demonstrate
-# the functionality of creating synthetic images, based on provided
-# product ids, and their CAT models, sourced from the database.
+# Module Description: This script demonstrates the functionality
+# of creating synthetic images based on provided product IDs and their
+# corresponding CAT models, sourced from the database.
 ######################################################################
 
 from typing import Any, Dict, List, Tuple
@@ -14,7 +14,7 @@ from tqdm import tqdm
 
 
 # Placeholder function to simulate fetching product information based on product ID
-def get_product_info(product_id: int) -> Any:
+def fetch_product_info(product_id: int) -> Any:
     """Fetch the product information based on the product ID.
 
     :param product_id: The product ID for which to fetch the information
@@ -40,7 +40,7 @@ def generate_synthetic_image(  # noqa
     model = product_info["model"]  # noqa
     param = product_info["param"]
 
-    # Generate a random image (use product_info to influence this)
+    # Generate a random image
     rng = np.random.default_rng(seed=seed)  # Set a seed for reproducibility
     image = rng.integers(0, 256, size=(height, width, channels), dtype=dtype)
 
@@ -65,7 +65,7 @@ def generate_synthetic_data(
     height, width, channels = dim
 
     # Fetch product information based on product_id
-    product_info = get_product_info(product_id)
+    product_info = fetch_product_info(product_id)
 
     # Generate synthetic data
     synthetic_data = [generate_synthetic_image(height, width, channels, product_info, dtype) for _ in range(n_images)]
@@ -104,7 +104,7 @@ def generate_synthetic_data_for_products(
 
 if __name__ == "__main__":
     # Example usage:
-    product_ids = [1, 2, 3]  # Replace with actual product IDs
+    product_ids = [1, 2, 3]  # Replace with actual product IDs sources from the dummy database
     params = {"height": 256, "width": 256, "channels": 3, "n_images": 10, "dtype": np.uint8}
     synthetic_data = generate_synthetic_data_for_products(product_ids, params)
     for pid, data in synthetic_data.items():

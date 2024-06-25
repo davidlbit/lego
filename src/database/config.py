@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 ######################################################################
-# Authors:  David Anthony Parham
-
-# Module Description: This script loads the environment variables,
-# and established a connection to the database.
+# Authors: David Anthony Parham
+#
+# Module Description: This script loads the environment variables
+# and establishes a connection to the database.
 ######################################################################
 
 import os
@@ -30,7 +30,7 @@ if not all([db_user, db_password, db_host, db_name]):
 if db_password is None:
     raise ValueError("DB_PASSWORD environment variable must be set")
 
-# Encode the password with quote_plus
+# Handle special characters in the password variable
 encoded_password = quote_plus(db_password)
 
 # Construct the database URL

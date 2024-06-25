@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 ######################################################################
-# Authors:  David Anthony Parham
+# Author: David Anthony Parham
 
-# Module Description: This script contains the schema for the designed
-# database, that stores the order history of all the lego sets &
-# brick pieces, which are used at a Lego Play Day Event.
+# Module Description: This script contains the schema for the database
+# designed to store the order history of all Lego sets and brick pieces
+# used at a Lego Play Day Event.
 ######################################################################
 
 from typing import TYPE_CHECKING

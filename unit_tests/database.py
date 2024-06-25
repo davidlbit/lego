@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 ######################################################################
-# Authors:  David Anthony Parham
-
-# Module Description: This script is not functional and is meant to
-# showcase, that I typically (unit)-test my code.
+# Authors: David Anthony Parham
+#
+# Module Description: This script is non-functional and is intended
+# to showcase that I typically test my code using unit tests.
 ######################################################################
 
 import unittest

@@ -2,8 +2,8 @@
 ######################################################################
 # Authors:  David Anthony Parham
 
-# Module Description: This script acts as the main script, for
-# creating, a dummy database that follows the intend design layout
+# Module Description: This script acts as the main script for
+# creating a dummy database that follows the intended design layout
 # for this project.
 ######################################################################
 
@@ -14,7 +14,7 @@ if __name__ == "__main__":
     # Create database tables
     create_tables(engine)
 
-    # Populate tables with synthetic data
+    # Populate tables with synthetic (fake dummy) data
     populate_tables(engine)
 
     # Retrieve order information

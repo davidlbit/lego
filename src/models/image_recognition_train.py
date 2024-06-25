@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 ######################################################################
-# Authors:  David Anthony Parham
-
-# Module Description: This script is the training script, to train
-# the image recognition model, which is supposed to detect
-# certain LEGO bricks.
+# Author: David Anthony Parham
+#
+# Module Description: This script is used to train an image recognition
+# model designed to detect certain LEGO bricks.
 ######################################################################
+
 
 import os
 import time
@@ -18,7 +18,7 @@ from omegaconf import OmegaConf
 from torch import nn, optim
 from torch.utils.data import DataLoader, random_split
 from torchvision import transforms
-from torchvision.models import resnet18  # Import ResNet-18 from torchvision
+from torchvision.models import resnet18
 from tqdm import tqdm
 
 from data.synthetic_data import generate_synthetic_data_for_products
@@ -34,22 +34,32 @@ wandb.init(project="MLOps-Project", config=dict(config))
 # Set seeds for reproducibility using numpy's Generator
 rng = np.random.default_rng(seed=1)
 
-# Constants from config
+# Constants from config for model training
 EPOCHS = config.EPOCHS
 BATCH_SIZE = config.BATCH_SIZE
 LEARNING_RATE = config.LEARNING_RATE
 N_WORKERS = config.N_WORKERS
+
+# Dynamic variable from config
 best_val = config.BEST_VAL
+
+# Constant from config for synthetic data generation
+HEIGHT = config.HEIGHT
+WIDTH = config.WIDTH
+CHANNELS = config.CHANNELS
+N_IMAGES = config.N_IMAGES
+DTYPE = config.DTYPE
+
 
 # Determine device
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print("[INFO] Using device:", device)
 
-# Placeholder for actual product IDs from DB
+# Replace with actual product IDs sources from the dummy database
 product_ids = [1, 2, 3]
 
 # Generate synthetic data
-params = {"height": 256, "width": 256, "channels": 3, "n_images": 1000, "dtype": np.uint8}
+params = {"height": HEIGHT, "width": WIDTH, "channels": CHANNELS, "n_images": N_IMAGES, "dtype": DTYPE}
 synthetic_data = generate_synthetic_data_for_products(product_ids, params)
 
 # Extract images and labels from synthetic data

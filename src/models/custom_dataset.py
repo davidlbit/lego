@@ -1,3 +1,13 @@
+#!/usr/bin/env python3
+######################################################################
+# Author: David Anthony Parham
+#
+# Module Description: This script contains the implementation of the
+# CustomDataset class, which is needed to create the dataset that
+# trains the image recognition model.
+######################################################################
+
+
 from torch.utils.data import Dataset
 
 

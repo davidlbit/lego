@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 ######################################################################
-# Authors:  David Anthony Parham
-
+# Authors: David Anthony Parham
+#
 # Module Description: This script contains the logic for certain
-# database related operations, such as the creation, population
-# of retrieval of table data.
+# database-related operations, such as the creation, population,
+# and retrieval of table data.
 ######################################################################
 
 from database.schema import Base, Order, OrderSet, Piece, Set, SetPiece
@@ -80,10 +80,10 @@ def populate_tables(engine: Engine, num_records: int = 10) -> None:
         session.add_all(set_pieces)
         session.commit()
 
-        print("Tables populated successfully!")
+        print("[INFO] Tables populated successfully!")
 
     except Exception as e:
-        print(f"Error populating tables: {e!s}")
+        print(f"[ERROR] Error populating tables: {e!s}")
         session.rollback()
 
     finally:
@@ -112,7 +112,7 @@ def fetch_order_info(engine: Engine) -> None:
             print(f"Piece ID: {count.id}, Piece Name: {count.name}, Total Quantity: {count.total_quantity}")
 
     except Exception as e:
-        print(f"Error retrieving order info: {e!s}")
+        print(f"[ERROR] Error retrieving order info: {e!s}")
 
     finally:
         session.close()

@@ -12,21 +12,21 @@ Create a mockup source code solution for an application that focuses on image re
 
 ### Background Information
 
-The application is intended for use in a production line. The machinery is configured to select specific LEGO sets containing the LEGO bricks of interest before initialization. Once configured, the necessary data generation can begin.
+The application is intended for use on a production line where machinery is configured to select specific LEGO sets containing the LEGO bricks of interest before initialization. Once configured, the necessary data generation can begin.
 
 ### Assumptions
 
-1. We're only interested in specific LEGO bricks from selected LEGO sets.
+1. We are interested only in specific LEGO bricks from selected LEGO sets.
 2. We will generate synthetic data (both 2D and 3D) for the LEGO bricks of interest on the fly.
 3. All LEGO bricks are fully disassembled and in flawless (original) condition.
 
 ## Solution Layout
 
 1. **Connect to the Database**:
-   - Scan a unique ID (order identifier) to get the order history, with the complete product summary.
+   - Scan a unique ID (order identifier) to retrieve the order history with the complete product summary.
    - Query the following information:
      - Total number of LEGO bricks
-     - The CAT models, of the specific lego bricks
+     - The CAT models of the specific LEGO bricks
 
 2. **Create Reference Images**:
    - Forward the product ID to the pipeline responsible for generating synthetic images of the LEGO bricks.
@@ -35,14 +35,16 @@ The application is intended for use in a production line. The machinery is confi
    - Open a video stream and wait for the LEGO bricks to pass by.
 
 4. **Object Detection and Comparison**:
-   - Use sota object detectors (YOLO10 / RT-DETR) and compare the detected objects via a CNN (resnet18) against all reference images (support set).
-   - Label the detected objects as either "Redundant Brick" if the LEGO brick is not part of the recognized set, or with their product ID.
-   - Create a dictionary at initialization that tracks all LEGO brick IDs and counts. Decrement the count each time a LEGO brick is recognized. This dictionary will provide information on how many LEGO bricks are missing.
+   - Use state-of-the-art object detectors (YOLOv4 / RT-DETR) and compare the detected objects via a CNN (ResNet-18) against all reference images (support set).
+   - Label the detected objects as either "Redundant Brick" if the LEGO brick is not part of the recognized set or with their product ID.
+   - Create a dictionary during initialization that tracks all LEGO brick IDs and counts. Decrement the count each time a LEGO brick is recognized. This dictionary will provide information on how many LEGO bricks are missing.
 
 
 ### Flowchart
 
-![LEGO Flowchart]()
+![LEGO Flowchart](/assets/Lego_Platform_Concept_Flowchart.png)
+
+> Note: This flowchart is a draft version and is subject to change in the future. Its intention is to fully depict the architecture of a LEGO brick sorting platform.
 
 ### Database Design
 
@@ -90,9 +92,9 @@ The application is intended for use in a production line. The machinery is confi
 
 --------
 
-> Note: The code is not fully functional, and certain parts aren't even implemented,
-> or connected to parts in the source code, they're supposed to be integrated into.
-> The Project organization layout (shown above) displays those parts.
+> Note: The code is not fully functional, and certain parts are not yet implemented
+> or connected to other parts in the source code where they are supposed to be integrated.
+> The project organization layout (shown above) illustrates these parts.
 
 ## Getting Started
 
@@ -100,7 +102,7 @@ To run this project, follow these steps:
 
 1. Clone the repository.
 2. Set up the database connection.
-3. CD into the src folder
+3. CD into the src folder.
 4. Play around, by executing the provided scripts.
 
 
