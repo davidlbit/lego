@@ -1,8 +1,6 @@
 # LEGO Brick Image Recognition Case Study
 
-<a target="_blank" href="https://cookiecutter-data-science.drivendata.org/">
-    <img src="https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter" />
-</a>
+[![CCDS Project Template](https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter)](https://cookiecutter-data-science.drivendata.org/)
 
 This project is part of a case study conducted during the interview process for the Senior Software Engineering Position at the LEGO Group. The repository demonstrates my software engineering skills.
 
@@ -41,7 +39,6 @@ The application is intended for use on a production line where machinery is conf
    - Label the detected objects as either "Redundant Brick" if the LEGO brick is not part of the recognized set or with their product ID.
    - Create a dictionary during initialization that tracks all LEGO brick IDs and counts. Decrement the count each time a LEGO brick is recognized. This dictionary will provide information on how many LEGO bricks are missing.
 
-
 ### Flowchart
 
 ![LEGO Flowchart](/assets/Lego_Platform_Concept_Flowchart.png)
@@ -52,10 +49,9 @@ The application is intended for use on a production line where machinery is conf
 
 ![Database Design](/assets/db_diagram.png)
 
-
 ## Project Organization
 
-```
+```text
 ├── LICENSE                            <- License file if one is chosen
 ├── README.md                          <- Top-level README for developers
 ├── poetry.lock                        <- Poetry lock file (dependency resolution)
@@ -107,7 +103,6 @@ To run this project, follow these steps:
 2. Set up the database connection.
 3. CD into the src folder.
 4. Play around, by executing the provided scripts.
-
 
 ## License
 
